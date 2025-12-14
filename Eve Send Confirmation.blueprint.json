@@ -1,0 +1,1047 @@
+{
+    "name": "Eve Send Confirmation",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 2435890,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "Eve-Send-Confirmation"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "message",
+                        "spec": [
+                            {
+                                "name": "timestamp",
+                                "type": "number"
+                            },
+                            {
+                                "name": "type",
+                                "type": "text"
+                            },
+                            {
+                                "name": "toolCalls",
+                                "spec": {
+                                    "spec": [
+                                        {
+                                            "name": "id",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "function",
+                                            "spec": [
+                                                {
+                                                    "name": "name",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "arguments",
+                                                    "spec": [
+                                                        {
+                                                            "name": "name",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "email",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "dateTime",
+                                                            "type": "text"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        }
+                                    ],
+                                    "type": "collection"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "name": "toolCallList",
+                                "spec": {
+                                    "spec": [
+                                        {
+                                            "name": "id",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "type",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "function",
+                                            "spec": [
+                                                {
+                                                    "name": "name",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "arguments",
+                                                    "spec": [
+                                                        {
+                                                            "name": "name",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "email",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "dateTime",
+                                                            "type": "text"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        }
+                                    ],
+                                    "type": "collection"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "name": "toolWithToolCallList",
+                                "spec": {
+                                    "spec": [
+                                        {
+                                            "name": "type",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "function",
+                                            "spec": [
+                                                {
+                                                    "name": "name",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "parameters",
+                                                    "spec": [
+                                                        {
+                                                            "name": "type",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "required",
+                                                            "spec": {
+                                                                "type": "text"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        {
+                                                            "name": "properties",
+                                                            "spec": [
+                                                                {
+                                                                    "name": "name",
+                                                                    "spec": [
+                                                                        {
+                                                                            "name": "type",
+                                                                            "type": "text"
+                                                                        },
+                                                                        {
+                                                                            "name": "description",
+                                                                            "type": "text"
+                                                                        }
+                                                                    ],
+                                                                    "type": "collection"
+                                                                },
+                                                                {
+                                                                    "name": "email",
+                                                                    "spec": [
+                                                                        {
+                                                                            "name": "type",
+                                                                            "type": "text"
+                                                                        },
+                                                                        {
+                                                                            "name": "description",
+                                                                            "type": "text"
+                                                                        }
+                                                                    ],
+                                                                    "type": "collection"
+                                                                },
+                                                                {
+                                                                    "name": "dateTime",
+                                                                    "spec": [
+                                                                        {
+                                                                            "name": "type",
+                                                                            "type": "text"
+                                                                        },
+                                                                        {
+                                                                            "name": "description",
+                                                                            "type": "text"
+                                                                        }
+                                                                    ],
+                                                                    "type": "collection"
+                                                                }
+                                                            ],
+                                                            "type": "collection"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                },
+                                                {
+                                                    "name": "description",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        },
+                                        {
+                                            "name": "server",
+                                            "spec": [
+                                                {
+                                                    "name": "url",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "headers",
+                                                    "spec": [],
+                                                    "type": "collection"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        },
+                                        {
+                                            "name": "messages",
+                                            "type": "array"
+                                        },
+                                        {
+                                            "name": "toolCall",
+                                            "spec": [
+                                                {
+                                                    "name": "id",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "type",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "function",
+                                                    "spec": [
+                                                        {
+                                                            "name": "name",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "arguments",
+                                                            "spec": [
+                                                                {
+                                                                    "name": "name",
+                                                                    "type": "text"
+                                                                },
+                                                                {
+                                                                    "name": "email",
+                                                                    "type": "text"
+                                                                },
+                                                                {
+                                                                    "name": "dateTime",
+                                                                    "type": "text"
+                                                                }
+                                                            ],
+                                                            "type": "collection"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        }
+                                    ],
+                                    "type": "collection"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "name": "artifact",
+                                "spec": [
+                                    {
+                                        "name": "messages",
+                                        "spec": {
+                                            "spec": [
+                                                {
+                                                    "name": "role",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "message",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "time",
+                                                    "type": "number"
+                                                },
+                                                {
+                                                    "name": "secondsFromStart",
+                                                    "type": "number"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "name": "messagesOpenAIFormatted",
+                                        "spec": {
+                                            "spec": [
+                                                {
+                                                    "name": "role",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "content",
+                                                    "type": "text"
+                                                }
+                                            ],
+                                            "type": "collection"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "collection"
+                            },
+                            {
+                                "name": "call",
+                                "spec": [
+                                    {
+                                        "name": "id",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "orgId",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "createdAt",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "updatedAt",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "type",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "monitor",
+                                        "spec": [
+                                            {
+                                                "name": "listenUrl",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "controlUrl",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "transport",
+                                        "spec": [
+                                            {
+                                                "name": "provider",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "assistantVideoEnabled",
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "name": "callUrl",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "webCallUrl",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "status",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "assistant",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "transcriber",
+                                                "spec": [
+                                                    {
+                                                        "name": "model",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "language",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "provider",
+                                                        "type": "text"
+                                                    }
+                                                ],
+                                                "type": "collection"
+                                            },
+                                            {
+                                                "name": "model",
+                                                "spec": [
+                                                    {
+                                                        "name": "model",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "messages",
+                                                        "spec": {
+                                                            "spec": [
+                                                                {
+                                                                    "name": "content",
+                                                                    "type": "text"
+                                                                },
+                                                                {
+                                                                    "name": "role",
+                                                                    "type": "text"
+                                                                }
+                                                            ],
+                                                            "type": "collection"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    {
+                                                        "name": "toolIds",
+                                                        "spec": {
+                                                            "type": "text"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    {
+                                                        "name": "provider",
+                                                        "type": "text"
+                                                    }
+                                                ],
+                                                "type": "collection"
+                                            },
+                                            {
+                                                "name": "voice",
+                                                "spec": [
+                                                    {
+                                                        "name": "model",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "voiceId",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "provider",
+                                                        "type": "text"
+                                                    },
+                                                    {
+                                                        "name": "stability",
+                                                        "type": "number"
+                                                    },
+                                                    {
+                                                        "name": "similarityBoost",
+                                                        "type": "number"
+                                                    }
+                                                ],
+                                                "type": "collection"
+                                            },
+                                            {
+                                                "name": "firstMessage",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "voicemailMessage",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "endCallMessage",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "backgroundDenoisingEnabled",
+                                                "type": "boolean"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "assistantOverrides",
+                                        "spec": [
+                                            {
+                                                "name": "clientMessages",
+                                                "spec": {
+                                                    "type": "text"
+                                                },
+                                                "type": "array"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    }
+                                ],
+                                "type": "collection"
+                            },
+                            {
+                                "name": "assistant",
+                                "spec": [
+                                    {
+                                        "name": "name",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "transcriber",
+                                        "spec": [
+                                            {
+                                                "name": "model",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "language",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "provider",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "model",
+                                        "spec": [
+                                            {
+                                                "name": "model",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "messages",
+                                                "spec": {
+                                                    "spec": [
+                                                        {
+                                                            "name": "content",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "role",
+                                                            "type": "text"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "name": "toolIds",
+                                                "spec": {
+                                                    "type": "text"
+                                                },
+                                                "type": "array"
+                                            },
+                                            {
+                                                "name": "provider",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "tools",
+                                                "spec": {
+                                                    "spec": [
+                                                        {
+                                                            "name": "id",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "createdAt",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "updatedAt",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "type",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "function",
+                                                            "spec": [
+                                                                {
+                                                                    "name": "name",
+                                                                    "type": "text"
+                                                                },
+                                                                {
+                                                                    "name": "parameters",
+                                                                    "spec": [
+                                                                        {
+                                                                            "name": "type",
+                                                                            "type": "text"
+                                                                        },
+                                                                        {
+                                                                            "name": "required",
+                                                                            "spec": {
+                                                                                "type": "text"
+                                                                            },
+                                                                            "type": "array"
+                                                                        },
+                                                                        {
+                                                                            "name": "properties",
+                                                                            "spec": [
+                                                                                {
+                                                                                    "name": "name",
+                                                                                    "spec": [
+                                                                                        {
+                                                                                            "name": "type",
+                                                                                            "type": "text"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "description",
+                                                                                            "type": "text"
+                                                                                        }
+                                                                                    ],
+                                                                                    "type": "collection"
+                                                                                },
+                                                                                {
+                                                                                    "name": "dateTime",
+                                                                                    "spec": [
+                                                                                        {
+                                                                                            "name": "type",
+                                                                                            "type": "text"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "description",
+                                                                                            "type": "text"
+                                                                                        }
+                                                                                    ],
+                                                                                    "type": "collection"
+                                                                                }
+                                                                            ],
+                                                                            "type": "collection"
+                                                                        }
+                                                                    ],
+                                                                    "type": "collection"
+                                                                },
+                                                                {
+                                                                    "name": "description",
+                                                                    "type": "text"
+                                                                }
+                                                            ],
+                                                            "type": "collection"
+                                                        },
+                                                        {
+                                                            "name": "orgId",
+                                                            "type": "text"
+                                                        },
+                                                        {
+                                                            "name": "server",
+                                                            "spec": [
+                                                                {
+                                                                    "name": "url",
+                                                                    "type": "text"
+                                                                },
+                                                                {
+                                                                    "name": "headers",
+                                                                    "spec": [],
+                                                                    "type": "collection"
+                                                                }
+                                                            ],
+                                                            "type": "collection"
+                                                        }
+                                                    ],
+                                                    "type": "collection"
+                                                },
+                                                "type": "array"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "voice",
+                                        "spec": [
+                                            {
+                                                "name": "model",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "voiceId",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "provider",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "stability",
+                                                "type": "number"
+                                            },
+                                            {
+                                                "name": "similarityBoost",
+                                                "type": "number"
+                                            }
+                                        ],
+                                        "type": "collection"
+                                    },
+                                    {
+                                        "name": "firstMessage",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "voicemailMessage",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "endCallMessage",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "backgroundDenoisingEnabled",
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "clientMessages",
+                                        "spec": {
+                                            "type": "text"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "collection"
+                            }
+                        ],
+                        "type": "collection"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "microsoft-email:createAndSendAMessage",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 8654777
+            },
+            "mapper": {
+                "content": "Thankyou for calling MedSpa today {{1.message.toolCalls[].function.arguments.name}}!\n\nWe are looking forward to your session with us on {{1.message.toolCalls[].function.arguments.dateTime}}\n\nIf you need to reschedule please give us a call or email us here\n\nBest Regards,\nMedSpa Team",
+                "subject": "MedSpa Appointment confirmation with {{1.message.toolCalls[].function.arguments.name}}",
+                "contentType": "text",
+                "toRecipients": [
+                    {
+                        "name": "{{1.message.toolCalls[].function.arguments.name}}",
+                        "address": "{{1.message.toolCalls[].function.arguments.email}}"
+                    }
+                ],
+                "singleValueExtendedProperties": {}
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "from": {
+                            "mode": "chose"
+                        },
+                        "replyTo": {
+                            "mode": "chose"
+                        },
+                        "importance": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        },
+                        "contentType": {
+                            "mode": "chose",
+                            "label": "Text"
+                        },
+                        "ccRecipients": {
+                            "mode": "chose"
+                        },
+                        "toRecipients": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "bccRecipients": {
+                            "mode": "chose"
+                        },
+                        "internetMessageHeaders": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "azure"
+                            },
+                            "label": "My Microsoft connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:azure",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject",
+                        "required": true
+                    },
+                    {
+                        "name": "contentType",
+                        "type": "select",
+                        "label": "Body Content Type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "html",
+                                "text"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "type": "text",
+                        "label": "Body Content",
+                        "required": true
+                    },
+                    {
+                        "name": "importance",
+                        "type": "select",
+                        "label": "Importance",
+                        "validate": {
+                            "enum": [
+                                "Low",
+                                "Normal",
+                                "High"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "toRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "To Recipients",
+                        "required": true
+                    },
+                    {
+                        "name": "from",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "From",
+                        "validate": {
+                            "maxItems": 1
+                        }
+                    },
+                    {
+                        "name": "ccRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "CC Recipients"
+                    },
+                    {
+                        "name": "bccRecipients",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Bcc Recipients"
+                    },
+                    {
+                        "name": "replyTo",
+                        "spec": [
+                            {
+                                "name": "address",
+                                "type": "email",
+                                "label": "Email Address",
+                                "required": true
+                            },
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Reply To"
+                    },
+                    {
+                        "name": "attachments",
+                        "spec": [
+                            {
+                                "name": "filename",
+                                "type": "filename",
+                                "label": "File Name",
+                                "required": true,
+                                "semantic": "file:name"
+                            },
+                            {
+                                "name": "data",
+                                "type": "buffer",
+                                "label": "Data",
+                                "required": true,
+                                "semantic": "file:data"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Attachments"
+                    },
+                    {
+                        "name": "internetMessageHeaders",
+                        "spec": [
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name",
+                                "required": true
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value",
+                                "required": true
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Internet Message Headers"
+                    },
+                    {
+                        "name": "singleValueExtendedProperties",
+                        "spec": [
+                            {
+                                "name": "sensitivityLabel",
+                                "type": "text",
+                                "label": "Sensitivity Label"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Extended MAPI Properties"
+                    }
+                ],
+                "advanced": true
+            }
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": []
+    }
+}
